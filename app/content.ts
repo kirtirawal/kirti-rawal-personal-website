@@ -9,11 +9,11 @@ export const siteContent = {
 
 const englishContent = {
   meta: {
-    title: "Kirti Rawal — Medical Systems, Software & Healthcare",
+    title: "Kirti Rawal — Medical Software, Healthcare Data & AI",
     description:
-      "Kirti Rawal builds software, data tools and intelligent systems for healthcare, bringing together medical systems engineering, software, data and AI.",
+      "Medical Systems Engineering student with 3+ years in engineering. Focused on MedTech requirements and documentation, public-health visual analytics and a study project in explainable chest X-ray AI.",
     ogDescription:
-      "Medical systems, software, healthcare data and applied AI — with curiosity about people and the world."
+      "Medical software and systems, public-health data visualization, and explainable chest X-ray AI research."
   },
   languageSwitch: "DE",
   languageSwitchLabel: "Auf Deutsch wechseln",
@@ -29,10 +29,10 @@ const englishContent = {
   },
   hero: {
     eyebrow: "MEDICAL SYSTEMS · SOFTWARE · DATA · AI",
-    headline: ["I build software,", "data tools and"],
-    emphasis: ["intelligent", "systems for", "healthcare."],
+    headline: ["I build software", "and data tools"],
+    emphasis: ["for healthcare and", "medical technology."],
     intro:
-      "Medical Systems Engineering graduate student with 3+ years of professional engineering experience. Curious about technology. Drawn to people.",
+      "M.Sc. student in Medical Systems Engineering with 3+ years in engineering. Current MedTech work focuses on requirements and documentation; public-health analytics and chest X-ray AI are study projects.",
     explore: "Explore my work",
     requestCv: "Request my CV",
     location: "MAGDEBURG, GERMANY",
@@ -40,7 +40,7 @@ const englishContent = {
     portraitAlt: "Illustrated portrait",
     portraitLabel: ["KIRTI RAWAL", "SOFTWARE × HEALTHCARE"],
     notes: ["THINK", "EXPLORE"],
-    caption: "A work in progress — just like me.",
+    caption: "",
     sideNote: ["ENGINEERING", "CURIOSITY", "CONNECTION"]
   },
   proof: {
@@ -49,6 +49,15 @@ const englishContent = {
     education: ["M.Sc.", "Medical Systems Engineering"],
     focus: ["Software · Data · AI", "Healthcare technology"],
     location: ["Germany", "Based in Magdeburg"]
+  },
+  logistics: {
+    label: "Recruiter logistics",
+    items: [
+      ["Full-time", "Start date by agreement"],
+      ["German B1 · English C1", "Languages"],
+      ["Magdeburg, Germany", "Mostly remote · flexible location"],
+      ["Software · Systems · Data · AI", "MedTech · Regulatory / quality"]
+    ]
   },
   ticker: {
     label: "Areas of interest",
@@ -59,9 +68,9 @@ const englishContent = {
     heading: "One life.",
     emphasis: "Many interests.",
     lead:
-      "I build software, data tools and intelligent systems for healthcare — with a curiosity about the people and needs behind the technology.",
+      "I work across medical technology, software and healthcare data, with attention to the people and needs behind each system.",
     paragraphs: [
-      "I started with medical electronics, spent three years in software and systems engineering, and am now studying Medical Systems Engineering at Otto von Guericke University Magdeburg. My work brings together engineering practice, healthcare data and medical technology.",
+      "I started with medical electronics, spent three years in software and systems engineering, and am now studying Medical Systems Engineering at Otto von Guericke University Magdeburg. My professional experience includes systems engineering and current MedTech requirements work; my public-health dashboard and chest X-ray AI study are academic projects.",
       "Outside engineering, I’m interested in people, cultures, places and the stories behind them. This is both a portfolio and a notebook for that wider curiosity."
     ],
     link: "Follow my curiosity",
@@ -72,35 +81,38 @@ const englishContent = {
     heading: "Questions turned",
     emphasis: "into practice.",
     intro:
-      "Professional experience and research, clearly distinguished. Each starts with a real problem to understand.",
+      "Professional experience and study projects are labelled separately. Each starts with a real problem to understand.",
     note:
       "Research and professional experience are labelled separately; no unpublished results or employer-confidential work are presented here."
   },
   projects: [
     {
       number: "01",
-      type: "PROFESSIONAL · HEALTHCARE DATA",
-      title: "Regional healthcare data, made explorable",
+      id: "public-health-dashboard",
+      type: "STUDY PROJECT · PUBLIC-HEALTH DATA",
+      title: "Visual analytics for public health",
       description:
-        "An interactive R/Shiny dashboard developed at University Medicine Magdeburg to visualize complex health and care data.",
-      tags: ["R", "Shiny", "Healthcare data", "Data visualization"],
+        "An R/Shiny dashboard prototype for public-health visual analytics, presented in a seminar for students, policymakers, hospitals, public-health institutions and researchers.",
+      tags: ["R", "Shiny", "Public health", "Data visualization"],
       accent: "peach",
       link: "https://kirtirawal.shinyapps.io/landkreis_dashboard_experimental",
       linkLabel: "Open live dashboard"
     },
     {
       number: "02",
-      type: "RESEARCH · MEDICAL IMAGING",
-      title: "Making medical AI more understandable",
+      id: "chest-xray-xai",
+      type: "MASTER'S THESIS · MEDICAL AI",
+      title: "Exploring explainable chest X-ray AI",
       description:
-        "A research exploration into explainable AI for chest X-ray imaging, focused on how models make predictions and how those outputs could be interpreted.",
-      tags: ["Medical imaging", "AI", "Explainability"],
+        "This master's thesis compares ResNet-18 and ViT-B/16 for cardiomegaly classification using CheXpert Plus chest X-rays, and examines attribution patterns with Integrated Gradients. Exploratory work only; attribution maps do not establish clinically correct reasoning or clinical suitability.",
+      tags: ["CheXpert Plus", "ResNet-18", "ViT-B/16", "Integrated Gradients"],
       accent: "blue",
       link: "https://celadon-crisp-337be4.netlify.app/",
-      linkLabel: "Open project"
+      linkLabel: "Open research prototype"
     },
     {
       number: "03",
+      id: "continental-systems",
       type: "PROFESSIONAL · SOFTWARE & SYSTEMS",
       title: "Engineering reliable systems",
       description:
@@ -121,24 +133,27 @@ const englishContent = {
     items: [
       {
         date: "2026 — PRESENT",
+        id: "sedivention-experience",
         organization: "Sedivention GmbH",
         evidenceUrl: "https://www.sedivention.com/",
         evidenceLabel: "Company website",
         role: "Working Student · MedTech",
         description:
-          "Supporting digital data and workspace management, technical requirements, test processes and documentation in a medical-technology environment."
+          "Working on requirements analysis and MDR-related documentation for medical-device development. Also developing an automation foundation for structured supplier communication, exploring AI use cases and providing IT support. Product-specific details are omitted."
       },
       {
         date: "2025 — PRESENT",
+        id: "university-medicine-experience",
         organization: "University Medicine Magdeburg",
         evidenceUrl: "https://isa-ummd.de/notfall-und-intensivmedizin/#w-tabs-0-data-w-pane-0",
         evidenceLabel: "ISA · Implementation Science",
         role: "Research & Data Analysis",
         description:
-          "Working with healthcare data through structured analyses, test series, quality checks and project documentation; developed an interactive R/Shiny dashboard."
+          "Working with healthcare data through structured analyses, test series, quality checks and project documentation."
       },
       {
         date: "2022 — 2025",
+        id: "continental-experience",
         organization: "Continental AG",
         evidenceUrl: "https://www.continental.com/en/",
         evidenceLabel: "Company website",
@@ -184,20 +199,28 @@ const englishContent = {
     intro: "A selection of methods and technologies reflected in my experience, studies and projects.",
     groups: [
       {
+        title: "Medical AI research",
+        items: "CheXpert Plus · ResNet-18 · ViT-B/16 · Integrated Gradients",
+        href: "#chest-xray-xai",
+        linkLabel: "View thesis project"
+      },
+      {
+        title: "Health-data visualization",
+        items: "R · Shiny · Public-health visual analytics",
+        href: "#public-health-dashboard",
+        linkLabel: "View dashboard project"
+      },
+      {
+        title: "Regulatory & quality",
+        items: "Requirements analysis · MDR-related documentation · Supplier-communication automation · AI use-case exploration",
+        href: "#sedivention-experience",
+        linkLabel: "View MedTech experience"
+      },
+      {
         title: "Software & systems",
-        items: "Python · C++ · MATLAB · Git · Jira · System integration · Software testing"
-      },
-      {
-        title: "Data & analytics",
-        items: "R · Shiny · Python · Streamlit · SQL basics · Data visualization"
-      },
-      {
-        title: "Medical AI & imaging",
-        items: "PyTorch · MONAI · Medical imaging · Signal and image processing"
-      },
-      {
-        title: "Engineering practice",
-        items: "Requirements engineering · Quality checks · Technical documentation · Agile development"
+        items: "System and software integration · Testing · Fault analysis · Technical documentation",
+        href: "#continental-experience",
+        linkLabel: "View engineering experience"
       }
     ]
   },
@@ -215,7 +238,7 @@ const englishContent = {
     ],
     fieldNotes: "FIELD NOTES / 001",
     fieldNotesTitle: "The world is a classroom.",
-    fieldNotesText: "New places, honest conversations, unfamiliar perspectives. More stories coming soon."
+    fieldNotesText: ""
   },
   cv: {
     kicker: "06 / CV & ROLE FOCUS",
@@ -227,15 +250,15 @@ const englishContent = {
     tracks: [
       {
         title: "Medical Software & Systems",
-        description: "Software development, integration, requirements, testing and MedTech processes."
+        description: "Requirements analysis, integration, testing and documentation across MedTech and engineering work."
+      },
+      {
+        title: "Healthcare Data & Analytics",
+        description: "Public-health visual analytics and an R/Shiny dashboard prototype presented in a seminar."
       },
       {
         title: "Medical AI & Imaging",
-        description: "Medical systems, image processing and applied AI research."
-      },
-      {
-        title: "Healthcare Data & Software",
-        description: "Healthcare data analysis, interactive dashboards and digital health tools."
+        description: "A study comparing chest X-ray classifiers and examining Integrated Gradients attribution patterns."
       }
     ]
   },
@@ -256,11 +279,11 @@ const englishContent = {
 
 const germanContent = {
   meta: {
-    title: "Kirti Rawal — Medizinische Systeme, Software & Gesundheit",
+    title: "Kirti Rawal — MedTech-Software, Gesundheitsdaten & KI",
     description:
-      "Kirti Rawal entwickelt Software, Datentools und intelligente Systeme für die Medizin und verbindet medizinische Systemtechnik mit Software, Daten und KI.",
+      "Masterstudentin der Medizinischen Systemtechnik mit mehr als drei Jahren Berufserfahrung im Ingenieurwesen. Schwerpunkte: MedTech-Anforderungen und -Dokumentation, Public-Health-Visualisierung und ein Studienprojekt zu erklärbarer Röntgen-KI.",
     ogDescription:
-      "Medizinische Systemtechnik, Software, Gesundheitsdaten und KI — mit Neugier auf Menschen und die Welt."
+      "Medizinische Software und Systeme, Public-Health-Datenvisualisierung und Forschung zu erklärbarer KI für Röntgenbilder."
   },
   languageSwitch: "EN",
   languageSwitchLabel: "Switch to English",
@@ -276,10 +299,10 @@ const germanContent = {
   },
   hero: {
     eyebrow: "MEDIZINTECHNIK · SOFTWARE · DATEN · KI",
-    headline: ["Ich entwickle", "Software,", "Datenwerkzeuge"],
-    emphasis: ["und intelligente", "Systeme für die", "Medizin."],
+    headline: ["Ich entwickle", "Software und"],
+    emphasis: ["Datentools für", "das Gesundheitswesen", "und die Medizintechnik."],
     intro:
-      "Masterstudentin der Medizinischen Systemtechnik mit mehr als drei Jahren Berufserfahrung im Ingenieurwesen. Neugierig auf Technologie. Von Menschen fasziniert.",
+      "Masterstudentin der Medizinischen Systemtechnik mit mehr als drei Jahren Berufserfahrung im Ingenieurwesen. Meine aktuelle MedTech-Arbeit betrifft Anforderungen und Dokumentation; Public-Health-Analytik und Röntgen-KI sind Studienprojekte.",
     explore: "Meine Arbeit ansehen",
     requestCv: "Lebenslauf anfragen",
     location: "MAGDEBURG, DEUTSCHLAND",
@@ -287,7 +310,7 @@ const germanContent = {
     portraitAlt: "Illustration eines Porträts",
     portraitLabel: ["KIRTI RAWAL", "SOFTWARE × GESUNDHEIT"],
     notes: ["DENKEN", "ENTDECKEN"],
-    caption: "In Entwicklung — genau wie ich.",
+    caption: "",
     sideNote: ["TECHNIK", "NEUGIER", "VERBINDUNG"]
   },
   proof: {
@@ -296,6 +319,15 @@ const germanContent = {
     education: ["M.Sc.", "Medizinische Systemtechnik"],
     focus: ["Software · Daten · KI", "Technologie im Gesundheitswesen"],
     location: ["Deutschland", "In Magdeburg"]
+  },
+  logistics: {
+    label: "Informationen für Recruiter",
+    items: [
+      ["Vollzeit", "Start nach Absprache"],
+      ["Deutsch B1 · Englisch C1", "Sprachen"],
+      ["Magdeburg", "Überwiegend remote · standortflexibel"],
+      ["Software · Systeme · Daten · KI", "MedTech · Regulierung / Qualität"]
+    ]
   },
   ticker: {
     label: "Interessengebiete",
@@ -306,9 +338,9 @@ const germanContent = {
     heading: "Ein Leben.",
     emphasis: "Viele Interessen.",
     lead:
-      "Ich entwickle Software, Datentools und intelligente Systeme für das Gesundheitswesen — und interessiere mich besonders für die Menschen und Bedürfnisse hinter der Technologie.",
+      "Ich arbeite an der Schnittstelle von Medizintechnik, Software und Gesundheitsdaten — mit Blick auf die Menschen und Bedürfnisse hinter den Systemen.",
     paragraphs: [
-      "Mein Weg begann mit medizinischer Elektronik. Danach sammelte ich drei Jahre Berufserfahrung in der Software- und Systemtechnik. Heute studiere ich Medizinische Systemtechnik an der Otto-von-Guericke-Universität Magdeburg. So verbinde ich technische Praxis mit Gesundheitsdaten und Medizintechnik.",
+      "Mein Weg begann mit medizinischer Elektronik. Danach sammelte ich drei Jahre Berufserfahrung in der Software- und Systemtechnik. Heute studiere ich Medizinische Systemtechnik an der Otto-von-Guericke-Universität Magdeburg. Meine Berufserfahrung umfasst Systemtechnik und aktuelle MedTech-Anforderungsarbeit; das Public-Health-Dashboard und die Röntgen-KI-Studie sind Studienprojekte.",
       "Neben der Technik interessieren mich Menschen, Kulturen, Orte und die Geschichten dahinter. Diese Website ist deshalb Portfolio und Notizbuch zugleich."
     ],
     link: "Was mich neugierig macht",
@@ -319,35 +351,38 @@ const germanContent = {
     heading: "Aus Fragen wird",
     emphasis: "konkrete Arbeit.",
     intro:
-      "Berufliche Erfahrung und Forschung sind klar voneinander abgegrenzt. Am Anfang steht jeweils eine Frage, die es zu verstehen gilt.",
+      "Berufliche Erfahrung und Studienprojekte sind klar gekennzeichnet. Am Anfang steht jeweils eine Frage, die es zu verstehen gilt.",
     note:
       "Forschungsarbeiten und Berufserfahrung sind getrennt gekennzeichnet. Unveröffentlichte Ergebnisse und vertrauliche Arbeitgeberprojekte werden hier nicht dargestellt."
   },
   projects: [
     {
       number: "01",
-      type: "BERUFLICHE ERFAHRUNG · GESUNDHEITSDATEN",
-      title: "Gesundheitsdaten interaktiv erkunden",
+      id: "public-health-dashboard",
+      type: "STUDIENPROJEKT · PUBLIC-HEALTH-DATEN",
+      title: "Visuelle Analysen für Public Health",
       description:
-        "Ein interaktives R/Shiny-Dashboard, entwickelt am Universitätsklinikum Magdeburg, um komplexe Gesundheits- und Versorgungsdaten anschaulich darzustellen.",
-      tags: ["R", "Shiny", "Gesundheitsdaten", "Datenvisualisierung"],
+        "Ein R/Shiny-Dashboard-Prototyp für visuelle Analysen im Bereich Public Health, vorgestellt in einem Seminar für Studierende, politische Entscheidungsträger, Kliniken, Institutionen des öffentlichen Gesundheitswesens und Forschende.",
+      tags: ["R", "Shiny", "Public Health", "Datenvisualisierung"],
       accent: "peach",
       link: "https://kirtirawal.shinyapps.io/landkreis_dashboard_experimental",
       linkLabel: "Live-Dashboard öffnen"
     },
     {
       number: "02",
-      type: "FORSCHUNG · MEDIZINISCHE BILDVERARBEITUNG",
-      title: "Medizinische KI verständlicher machen",
+      id: "chest-xray-xai",
+      type: "MASTERARBEIT · MEDIZINISCHE KI",
+      title: "Erklärbare KI für Röntgenbilder untersuchen",
       description:
-        "Eine Forschungsarbeit zu erklärbarer KI in der Röntgenbildgebung des Brustkorbs. Im Mittelpunkt steht, wie Modelle zu Vorhersagen kommen und wie sich ihre Ergebnisse interpretieren lassen.",
-      tags: ["Medizinische Bildgebung", "KI", "Erklärbarkeit"],
+        "In meiner Masterarbeit vergleiche ich ResNet-18 und ViT-B/16 bei der Klassifikation von Kardiomegalie mit CheXpert-Plus-Röntgenbildern und untersuche Attributionsmuster mit Integrated Gradients. Die explorative Arbeit belegt weder klinisch korrekte Schlussfolgerungen noch klinische Eignung.",
+      tags: ["CheXpert Plus", "ResNet-18", "ViT-B/16", "Integrated Gradients"],
       accent: "blue",
       link: "https://celadon-crisp-337be4.netlify.app/",
-      linkLabel: "Projekt öffnen"
+      linkLabel: "Forschungsprototyp öffnen"
     },
     {
       number: "03",
+      id: "continental-systems",
       type: "BERUFSERFAHRUNG · SOFTWARE & SYSTEME",
       title: "Zuverlässige Systeme entwickeln",
       description:
@@ -368,24 +403,27 @@ const germanContent = {
     items: [
       {
         date: "SEIT 2026",
+        id: "sedivention-experience",
         organization: "Sedivention GmbH",
         evidenceUrl: "https://www.sedivention.com/",
         evidenceLabel: "Unternehmenswebsite",
         role: "Werkstudentin · Medizintechnik",
         description:
-          "Mitarbeit im digitalen Daten- und Workspace-Management sowie an technischen Anforderungen, Testabläufen und Dokumentation im MedTech-Umfeld."
+          "Mitarbeit an Anforderungsanalysen und MDR-bezogener Dokumentation für die Entwicklung eines Medizinprodukts. Außerdem entwickle ich eine Automatisierungsgrundlage für die strukturierte Kommunikation mit Lieferanten, prüfe mögliche KI-Anwendungsfälle und leiste IT-Unterstützung. Produktspezifische Details bleiben außen vor."
       },
       {
         date: "SEIT 2025",
+        id: "university-medicine-experience",
         organization: "Universitätsklinikum Magdeburg",
         evidenceUrl: "https://isa-ummd.de/notfall-und-intensivmedizin/#w-tabs-0-data-w-pane-0",
         evidenceLabel: "ISA · Implementierungsforschung",
         role: "Wissenschaftliche Mitarbeiterin · Prozess- und Datenanalyse",
         description:
-          "Analyse von Gesundheitsdaten, strukturierte Testreihen, Qualitätsprüfungen und Projektdokumentation. Entwicklung eines interaktiven R/Shiny-Dashboards."
+          "Analyse von Gesundheitsdaten, strukturierte Testreihen, Qualitätsprüfungen und Projektdokumentation."
       },
       {
         date: "2022 — 2025",
+        id: "continental-experience",
         organization: "Continental AG",
         evidenceUrl: "https://www.continental.com/en/",
         evidenceLabel: "Unternehmenswebsite",
@@ -431,20 +469,28 @@ const germanContent = {
     intro: "Eine Auswahl an Methoden und Technologien aus meiner Berufserfahrung, meinem Studium und meinen Projekten.",
     groups: [
       {
+        title: "Medizinische KI-Forschung",
+        items: "CheXpert Plus · ResNet-18 · ViT-B/16 · Integrated Gradients",
+        href: "#chest-xray-xai",
+        linkLabel: "Studienprojekt ansehen"
+      },
+      {
+        title: "Visualisierung von Gesundheitsdaten",
+        items: "R · Shiny · Visuelle Analysen im Bereich Public Health",
+        href: "#public-health-dashboard",
+        linkLabel: "Dashboard-Projekt ansehen"
+      },
+      {
+        title: "Regulierung & Qualität",
+        items: "Anforderungsanalyse · MDR-bezogene Dokumentation · Automatisierung der Lieferantenkommunikation · KI-Anwendungsfälle",
+        href: "#sedivention-experience",
+        linkLabel: "MedTech-Erfahrung ansehen"
+      },
+      {
         title: "Software & Systeme",
-        items: "Python · C++ · MATLAB · Git · Jira · Systemintegration · Softwaretests"
-      },
-      {
-        title: "Daten & Analyse",
-        items: "R · Shiny · Python · Streamlit · SQL-Grundlagen · Datenvisualisierung"
-      },
-      {
-        title: "Medizinische KI & Bildgebung",
-        items: "PyTorch · MONAI · Medizinische Bildgebung · Signal- und Bildverarbeitung"
-      },
-      {
-        title: "Ingenieurmethoden",
-        items: "Requirements Engineering · Qualitätsprüfungen · Technische Dokumentation · Agile Entwicklung"
+        items: "Software- und Systemintegration · Tests · Fehleranalysen · Technische Dokumentation",
+        href: "#continental-experience",
+        linkLabel: "Ingenieurserfahrung ansehen"
       }
     ]
   },
@@ -462,7 +508,7 @@ const germanContent = {
     ],
     fieldNotes: "FELDNOTIZEN / 001",
     fieldNotesTitle: "Die Welt ist ein Klassenzimmer.",
-    fieldNotesText: "Neue Orte, ehrliche Gespräche, ungewohnte Perspektiven. Weitere Geschichten folgen."
+    fieldNotesText: ""
   },
   cv: {
     kicker: "06 / LEBENSLAUF & SCHWERPUNKTE",
@@ -474,15 +520,15 @@ const germanContent = {
     tracks: [
       {
         title: "Medizinische Software & Systeme",
-        description: "Softwareentwicklung, Integration, Requirements Engineering, Tests und MedTech-Prozesse."
+        description: "Anforderungsanalyse, Integration, Tests und Dokumentation in MedTech und Ingenieurwesen."
+      },
+      {
+        title: "Gesundheitsdaten & Analyse",
+        description: "Visuelle Analysen im Bereich Public Health und ein in einem Seminar vorgestellter R/Shiny-Dashboard-Prototyp."
       },
       {
         title: "Medizinische KI & Bildgebung",
-        description: "Medizinische Systeme, Bildverarbeitung und angewandte KI-Forschung."
-      },
-      {
-        title: "Gesundheitsdaten & Software",
-        description: "Analyse von Gesundheitsdaten, interaktive Dashboards und digitale Gesundheitslösungen."
+        description: "Studienprojekt zum Vergleich von Röntgenbild-Klassifikatoren und zur Untersuchung von Integrated-Gradients-Attributionsmustern."
       }
     ]
   },

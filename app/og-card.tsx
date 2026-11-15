@@ -48,7 +48,7 @@ export function renderOgCard() {
             </div>
           </div>
           <div style={{ display: "flex", fontSize: 17, letterSpacing: 3, color: "#686d67" }}>
-            MEDICAL SYSTEMS · SOFTWARE · DATA · AI
+            MEDICAL SYSTEMS · SOFTWARE · HEALTH DATA · AI
           </div>
         </div>
 
@@ -74,7 +74,7 @@ export function renderOgCard() {
               color: "#3f453e"
             }}
           >
-            Software, data tools and intelligent systems for healthcare.
+            Medical software, public-health data and explainable AI.
           </div>
         </div>
 

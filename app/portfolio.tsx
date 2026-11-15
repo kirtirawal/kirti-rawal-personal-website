@@ -58,13 +58,19 @@ export function Portfolio({ language }: { language: Language }) {
           </div>
           <div className="floating-note note-top"><span>01 /</span> {text.hero.notes[0]}</div>
           <div className="floating-note note-bottom"><span>02 /</span> {text.hero.notes[1]}</div>
-          <div className="visual-caption">{text.hero.caption}</div>
+          {text.hero.caption && <div className="visual-caption">{text.hero.caption}</div>}
         </div>
         <div className="hero-side-note">{text.hero.sideNote[0]} <span>×</span> {text.hero.sideNote[1]} <span>×</span> {text.hero.sideNote[2]}</div>
       </section>
 
       <section className="proof-strip section-wrap" aria-label={text.proof.label}>
         {[text.proof.experience, text.proof.education, text.proof.focus, text.proof.location].map(([value, label]) => (
+          <div key={label}><strong>{value}</strong><span>{label}</span></div>
+        ))}
+      </section>
+
+      <section className="proof-strip logistics-strip section-wrap" aria-label={text.logistics.label}>
+        {text.logistics.items.map(([value, label]) => (
           <div key={label}><strong>{value}</strong><span>{label}</span></div>
         ))}
       </section>
@@ -110,7 +116,7 @@ export function Portfolio({ language }: { language: Language }) {
           </div>
           <div className="project-list">
             {text.projects.map((project) => (
-              <article className="project-card" key={project.number}>
+              <article className="project-card" id={project.id} key={project.number}>
                 <div className={`project-art ${project.accent}`} aria-hidden="true">
                   <span className="project-index">{project.number}</span>
                   {project.number === "01" && <div className="scan-art"><div /><div /><div /><span>{language === "en" ? "DATA / HEALTH" : "DATEN / GESUNDHEIT"}</span></div>}
@@ -144,7 +150,7 @@ export function Portfolio({ language }: { language: Language }) {
         </div>
         <div className="timeline">
           {text.experience.items.map((item) => (
-            <article className="timeline-item" key={item.organization}>
+            <article className="timeline-item" id={item.id} key={item.organization}>
               <span className="timeline-date">{item.date}</span>
               <div>
                 <h3>{item.organization}</h3>
@@ -188,10 +194,11 @@ export function Portfolio({ language }: { language: Language }) {
           </div>
           <div className="skills-grid">
             {text.skills.groups.map((group) => (
-              <article className="skill-card" key={group.title}>
+              <a className="skill-card" href={group.href} key={group.title}>
                 <h3>{group.title}</h3>
                 <p>{group.items}</p>
-              </article>
+                <span className="skill-link">{group.linkLabel} <Arrow diagonal /></span>
+              </a>
             ))}
           </div>
         </div>
@@ -217,7 +224,7 @@ export function Portfolio({ language }: { language: Language }) {
           <div>
             <span className="project-type">{text.curiosity.fieldNotes}</span>
             <h3>{text.curiosity.fieldNotesTitle}</h3>
-            <p>{text.curiosity.fieldNotesText}</p>
+            {text.curiosity.fieldNotesText && <p>{text.curiosity.fieldNotesText}</p>}
           </div>
           <span className="travel-star">✳</span>
         </div>

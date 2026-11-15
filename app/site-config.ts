@@ -23,7 +23,7 @@ function normaliseOrigin(value: string): string {
 export const siteUrl = normaliseOrigin(
   process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-    "kirti-rawal-personal-website.vercel.app"
+    "kirti-rawal-personal-brand.vercel.app"
 );
 
 /** Canonical path of every language, shared by metadata, sitemap and JSON-LD. */
@@ -44,5 +44,5 @@ export const ogImage = {
   path: "/og",
   width: 1200,
   height: 630,
-  alt: "Kirti Rawal — medical systems, software, healthcare data and applied AI"
+  alt: "Kirti Rawal — medical software, public-health data visualization and explainable AI"
 } as const;

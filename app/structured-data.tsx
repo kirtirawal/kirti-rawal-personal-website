@@ -5,9 +5,10 @@ import { languagePaths, siteUrl, type SiteLanguage } from "./site-config";
 const knowsAbout = [
   "Medical systems engineering",
   "Software engineering",
-  "Healthcare data",
-  "Applied artificial intelligence",
-  "Medical imaging"
+  "Public health data visualization",
+  "Medical device requirements analysis",
+  "MDR-related documentation",
+  "Explainable medical imaging AI"
 ];
 
 type JsonLdNode = Record<string, unknown>;
