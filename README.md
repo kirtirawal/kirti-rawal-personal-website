@@ -83,17 +83,18 @@ For best results, use a high-resolution portrait with a simple background.
 
 `NEXT_PUBLIC_SITE_URL` sets the canonical origin. It feeds the canonical links,
 the `hreflang` pair between `/` and `/de`, `sitemap.xml`, `robots.txt` and the
-JSON-LD profile block. Copy `.env.example` to `.env.local` and change the value
-when the site moves to a custom domain; the fallback in `app/site-config.ts`
-matches the Vercel default URL.
+JSON-LD profile block. The variable is optional: on Vercel the origin is detected
+from `VERCEL_PROJECT_PRODUCTION_URL`, so a fresh deployment canonicalises to its
+own `<project>.vercel.app` host with no configuration. Set `NEXT_PUBLIC_SITE_URL`
+(see `.env.example`) only to point every URL at a custom domain.
 
 Generated automatically:
 
 - `app/sitemap.ts` → `/sitemap.xml`
 - `app/robots.ts` → `/robots.txt`
 - `app/icon.svg` → browser tab icon
-- `app/opengraph-image.tsx` and `app/twitter-image.tsx` → 1200×630 preview card
-  for LinkedIn, X and chat apps (built at build time, no binary asset needed)
+- `app/og/route.tsx` → 1200×630 `og:image` for LinkedIn, X and chat apps
+  (prerendered from `app/og-card.tsx` at build time, no binary asset needed)
 - `app/structured-data.tsx` → `Person` + `ProfilePage` JSON-LD on both languages
 
 ## Deploy to Vercel
@@ -126,8 +127,9 @@ npx vercel --prod
 ## Before sharing the live URL
 
 - Confirm the contact email and social links.
-- Set `NEXT_PUBLIC_SITE_URL` to the real production domain before sharing links
-  on LinkedIn; otherwise the canonical URL falls back to the Vercel default.
+- Confirm the canonical host. Open the deployed site, view source and check that
+  `<link rel="canonical">` points at the domain you are actually sharing; if it
+  does not, set `NEXT_PUBLIC_SITE_URL` and redeploy.
 - Add public PDF files before changing the CV request links into download links.
 - Check all personal and project details for accuracy.
 - Add your own profile photo if desired.

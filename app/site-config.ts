@@ -1,12 +1,30 @@
 /**
+ * Turns a bare host or a full URL into a protocol-prefixed origin without a
+ * trailing slash, so callers can always concatenate a path onto it.
+ */
+function normaliseOrigin(value: string): string {
+  const withProtocol = /^https?:\/\//.test(value) ? value : `https://${value}`;
+  return withProtocol.replace(/\/+$/, "");
+}
+
+/**
  * Canonical origin of the deployed website.
  *
- * Override it with `NEXT_PUBLIC_SITE_URL` (see `.env.example`) once the site
- * runs on a custom domain. The fallback matches the Vercel project name.
+ * Resolution order:
+ * 1. `NEXT_PUBLIC_SITE_URL` — set this once the site runs on a custom domain.
+ * 2. `VERCEL_PROJECT_PRODUCTION_URL` — injected by Vercel into every build, so
+ *    a `<project>.vercel.app` deployment canonicalises to its real host without
+ *    any manual configuration.
+ * 3. The documented default below, used for local builds.
+ *
+ * Only server modules import this file, so the non-public Vercel variable is
+ * resolved at build time and never reaches the browser bundle.
  */
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kirti-rawal-personal-website.vercel.app"
-).replace(/\/+$/, "");
+export const siteUrl = normaliseOrigin(
+  process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    "kirti-rawal-personal-website.vercel.app"
+);
 
 /** Canonical path of every language, shared by metadata, sitemap and JSON-LD. */
 export const languagePaths = {
