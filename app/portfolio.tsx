@@ -8,7 +8,7 @@ export function Portfolio({ language }: { language: Language }) {
   const text = pageContent[language];
 
   return (
-    <main>
+    <main id="main" tabIndex={-1}>
       <div className="topbar">
         <a className="wordmark" href="#home" aria-label={text.nav.homeLabel}>KR<span>.</span></a>
         <nav aria-label={text.nav.mainLabel}>
@@ -71,7 +71,14 @@ export function Portfolio({ language }: { language: Language }) {
 
       <section className="ticker" aria-label={text.ticker.label}>
         <div className="ticker-track">
-          {text.ticker.items.map((item) => <span key={item}>{item}<b> ✳ </b></span>)}
+          {[...text.ticker.items, ...text.ticker.items].map((item, index) => (
+            <span
+              key={`${item}-${index}`}
+              aria-hidden={index >= text.ticker.items.length || undefined}
+            >
+              {item}<b> ✳ </b>
+            </span>
+          ))}
         </div>
       </section>
 
@@ -104,7 +111,7 @@ export function Portfolio({ language }: { language: Language }) {
           <div className="project-list">
             {text.projects.map((project) => (
               <article className="project-card" key={project.number}>
-                <div className={`project-art ${project.accent}`}>
+                <div className={`project-art ${project.accent}`} aria-hidden="true">
                   <span className="project-index">{project.number}</span>
                   {project.number === "01" && <div className="scan-art"><div /><div /><div /><span>{language === "en" ? "DATA / HEALTH" : "DATEN / GESUNDHEIT"}</span></div>}
                   {project.number === "02" && <div className="orbit-art"><i /><i /><i /><b>+</b></div>}

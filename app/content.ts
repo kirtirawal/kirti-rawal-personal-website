@@ -8,11 +8,19 @@ export const siteContent = {
 };
 
 const englishContent = {
+  meta: {
+    title: "Kirti Rawal — Medical Systems, Software & Healthcare",
+    description:
+      "Kirti Rawal builds software, data tools and intelligent systems for healthcare, bringing together medical systems engineering, software, data and AI.",
+    ogDescription:
+      "Medical systems, software, healthcare data and applied AI — with curiosity about people and the world."
+  },
   languageSwitch: "DE",
   languageSwitchLabel: "Auf Deutsch wechseln",
   nav: {
     mainLabel: "Main navigation",
     homeLabel: "Kirti Rawal home",
+    skipToContent: "Skip to main content",
     work: "Work",
     experience: "Experience",
     about: "About",
@@ -247,11 +255,19 @@ const englishContent = {
 } as const;
 
 const germanContent = {
+  meta: {
+    title: "Kirti Rawal — Medizinische Systeme, Software & Gesundheit",
+    description:
+      "Kirti Rawal entwickelt Software, Datentools und intelligente Systeme für die Medizin und verbindet medizinische Systemtechnik mit Software, Daten und KI.",
+    ogDescription:
+      "Medizinische Systemtechnik, Software, Gesundheitsdaten und KI — mit Neugier auf Menschen und die Welt."
+  },
   languageSwitch: "EN",
   languageSwitchLabel: "Switch to English",
   nav: {
     mainLabel: "Hauptnavigation",
     homeLabel: "Kirti Rawal — Startseite",
+    skipToContent: "Zum Hauptinhalt springen",
     work: "Arbeiten",
     experience: "Erfahrung",
     about: "Über mich",

@@ -79,6 +79,23 @@ The current hero portrait is a CSS illustration, not a real photograph. To use y
 
 For best results, use a high-resolution portrait with a simple background.
 
+## Site URL, SEO and social previews
+
+`NEXT_PUBLIC_SITE_URL` sets the canonical origin. It feeds the canonical links,
+the `hreflang` pair between `/` and `/de`, `sitemap.xml`, `robots.txt` and the
+JSON-LD profile block. Copy `.env.example` to `.env.local` and change the value
+when the site moves to a custom domain; the fallback in `app/site-config.ts`
+matches the Vercel default URL.
+
+Generated automatically:
+
+- `app/sitemap.ts` → `/sitemap.xml`
+- `app/robots.ts` → `/robots.txt`
+- `app/icon.svg` → browser tab icon
+- `app/opengraph-image.tsx` and `app/twitter-image.tsx` → 1200×630 preview card
+  for LinkedIn, X and chat apps (built at build time, no binary asset needed)
+- `app/structured-data.tsx` → `Person` + `ProfilePage` JSON-LD on both languages
+
 ## Deploy to Vercel
 
 ### Option A — GitHub (recommended)
@@ -109,6 +126,8 @@ npx vercel --prod
 ## Before sharing the live URL
 
 - Confirm the contact email and social links.
+- Set `NEXT_PUBLIC_SITE_URL` to the real production domain before sharing links
+  on LinkedIn; otherwise the canonical URL falls back to the Vercel default.
 - Add public PDF files before changing the CV request links into download links.
 - Check all personal and project details for accuracy.
 - Add your own profile photo if desired.
@@ -128,7 +147,15 @@ kirti-rawal-personal-brand/
 │   │   └── page.tsx
 │   ├── content.ts
 │   ├── globals.css
-│   └── portfolio.tsx
+│   ├── icon.svg
+│   ├── metadata.ts
+│   ├── opengraph-image.tsx
+│   ├── portfolio.tsx
+│   ├── robots.ts
+│   ├── site-config.ts
+│   ├── sitemap.ts
+│   ├── structured-data.tsx
+│   └── twitter-image.tsx
 ├── public/
 ├── .env.example
 ├── .gitignore
@@ -141,6 +168,7 @@ kirti-rawal-personal-brand/
 
 ## Notes
 
-- No database, API keys or environment variables are required for this first version.
+- No secrets, API keys or database are required. `NEXT_PUBLIC_SITE_URL` is the
+  only optional setting.
 - Contact and CV request buttons open the visitor's email application.
 - The visual portrait is a CSS placeholder; it does not depict a real person.

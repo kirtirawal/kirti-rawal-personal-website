@@ -1,26 +1,24 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { siteContent } from "../content";
+import { pageContent } from "../content";
+import { createMetadata, siteViewport } from "../metadata";
+import { StructuredData } from "../structured-data";
 import "../globals.css";
 
-export const metadata: Metadata = {
-  title: `${siteContent.name} — Medical Systems, Software & Healthcare`,
-  description:
-    "Kirti Rawal builds software, data tools and intelligent systems for healthcare, bringing together medical systems engineering, software, data and AI.",
-  openGraph: {
-    title: siteContent.name,
-    description: "Medical systems, software, healthcare data and applied AI — with curiosity about people and the world.",
-    type: "website",
-    locale: "en_US"
-  }
-};
+export const metadata = createMetadata("en");
+export const viewport = siteViewport;
 
 export default function EnglishLayout({
   children
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#main">
+          {pageContent.en.nav.skipToContent}
+        </a>
+        {children}
+        <StructuredData language="en" />
+      </body>
     </html>
   );
 }
